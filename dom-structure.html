@@ -9,182 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Additional styles specific to DOM Structure page */
-      .dom-visual-container {
-        overflow-x: auto;
-        padding: 40px 20px;
-      }
-
-      .dom-tree-visual {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 800px;
-      }
-
-      .dom-level {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .dom-node-box {
-        padding: 10px 22px;
-        border: 2px solid var(--color-secondary);
-        font-weight: 600;
-        font-size: 0.85rem;
-        background: var(--color-white);
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        font-family: "Courier New", monospace;
-      }
-
-      .dom-node-box:hover {
-        background: var(--color-secondary);
-        color: var(--color-white);
-        transform: scale(1.05);
-      }
-
-      .dom-node-box.root {
-        background: var(--color-primary);
-        color: var(--color-white);
-        border-color: var(--color-primary);
-        font-size: 1rem;
-        padding: 14px 30px;
-      }
-
-      .dom-node-box.root:hover {
-        background: var(--color-secondary);
-      }
-
-      .dom-line {
-        width: 2px;
-        height: 25px;
-        background: var(--color-border);
-        margin: 0 auto;
-      }
-
-      .dom-horizontal {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 15px;
-        position: relative;
-      }
-
-      .dom-horizontal::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 10%;
-        right: 10%;
-        height: 2px;
-        background: var(--color-border);
-      }
-
-      .dom-branch-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .dom-branch-item .dom-line-top {
-        width: 2px;
-        height: 15px;
-        background: var(--color-border);
-      }
-
-      .dom-sub-children {
-        display: flex;
-        gap: 8px;
-        margin-top: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .dom-sub-children .dom-node-box {
-        font-size: 0.75rem;
-        padding: 6px 12px;
-        border-width: 1px;
-        background: var(--color-light);
-      }
-
-      .dom-sub-children .dom-node-box:hover {
-        background: var(--color-secondary);
-        color: var(--color-white);
-      }
-
-      /* Code representation */
-      .dom-code-block {
-        background: #1e1e2e;
-        color: #cdd6f4;
-        padding: 30px;
-        border-radius: 8px;
-        overflow-x: auto;
-        font-family: "Courier New", monospace;
-        font-size: 0.85rem;
-        line-height: 1.9;
-        margin-top: 30px;
-      }
-
-      .dom-code-block .indent-1 {
-        margin-left: 25px;
-      }
-      .dom-code-block .indent-2 {
-        margin-left: 50px;
-      }
-      .dom-code-block .indent-3 {
-        margin-left: 75px;
-      }
-      .dom-code-block .indent-4 {
-        margin-left: 100px;
-      }
-
-      .dom-code-block .tag {
-        color: #f38ba8;
-      }
-      .dom-code-block .attr {
-        color: #fab387;
-      }
-      .dom-code-block .string {
-        color: #a6e3a1;
-      }
-      .dom-code-block .comment {
-        color: #6c7086;
-        font-style: italic;
-      }
-      .dom-code-block .text {
-        color: #cdd6f4;
-      }
-
-      .explanation-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        margin-top: 40px;
-      }
-
-      .explanation-card {
-        padding: 25px;
-        background: var(--color-white);
-        border: 1px solid var(--color-border);
-        border-left: 4px solid var(--color-secondary);
-      }
-
-      .explanation-card h4 {
-        margin-bottom: 10px;
-        font-family: "Courier New", monospace;
-        color: var(--color-secondary);
-      }
-
-      .explanation-card p {
-        font-size: 0.9rem;
-      }
-    </style>
   </head>
   <body>
     <!-- ======== MARQUEE BAR ======== -->
@@ -192,11 +16,11 @@
       <div class="marquee-content">
         <span>✦ Spring/Summer 2026 Collection Now Available</span>
         <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
-        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Free Shipping on Orders Over ₦250</span>
         <span>✦ Book Your Private Styling Session Today</span>
         <span>✦ Spring/Summer 2026 Collection Now Available</span>
         <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
-        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Free Shipping on Orders Over ₦250</span>
         <span>✦ Book Your Private Styling Session Today</span>
       </div>
     </div>
@@ -269,8 +93,8 @@
             </p>
             <p>
               Below is the visual DOM structure of the
-              <strong>Baseline</strong> website, showing how elements are
-              nested inside one another, from the root
+              <strong>Baseline</strong> website, showing how elements are nested
+              inside one another, from the root
               <code>&lt;html&gt;</code> element down to individual components
               like navigation links, images, and text content.
             </p>
@@ -294,13 +118,17 @@
           <div class="dom-tree-visual">
             <!-- Level 0: Document -->
             <div class="dom-level">
-              <div class="dom-node-box root">Document</div>
+              <div class="dom-node-box root" data-tooltip="The DOM entry point">
+                Document
+              </div>
             </div>
             <div class="dom-line"></div>
 
             <!-- Level 1: html -->
             <div class="dom-level">
-              <div class="dom-node-box root">&lt;html&gt;</div>
+              <div class="dom-node-box root" data-tooltip="Root HTML element">
+                &lt;html&gt;
+              </div>
             </div>
             <div class="dom-line"></div>
 
@@ -308,90 +136,78 @@
             <div class="dom-horizontal">
               <div class="dom-branch-item">
                 <div class="dom-line-top"></div>
-                <div class="dom-node-box">&lt;head&gt;</div>
+                <div class="dom-node-box" data-tooltip="Document metadata">
+                  &lt;head&gt;
+                </div>
                 <div class="dom-line"></div>
                 <div class="dom-sub-children">
-                  <div class="dom-node-box">&lt;meta&gt;</div>
-                  <div class="dom-node-box">&lt;title&gt;</div>
-                  <div class="dom-node-box">&lt;link&gt; CSS</div>
-                  <div class="dom-node-box">&lt;link&gt; Fonts</div>
+                  <div class="dom-node-box" data-tooltip="Character encoding">
+                    &lt;meta&gt;
+                  </div>
+                  <div class="dom-node-box" data-tooltip="Page title">
+                    &lt;title&gt;
+                  </div>
+                  <div class="dom-node-box" data-tooltip="Stylesheet link">
+                    &lt;link&gt; CSS
+                  </div>
+                  <div class="dom-node-box" data-tooltip="Google Fonts">
+                    &lt;link&gt; Fonts
+                  </div>
                 </div>
               </div>
 
               <div class="dom-branch-item">
                 <div class="dom-line-top"></div>
-                <div class="dom-node-box">&lt;body&gt;</div>
+                <div class="dom-node-box" data-tooltip="Visible page content">
+                  &lt;body&gt;
+                </div>
                 <div class="dom-line"></div>
                 <div
                   class="dom-sub-children"
-                  style="flex-direction: column; gap: 12px"
+                  style="flex-direction: column; gap: 15px"
                 >
                   <!-- Body children row -->
                   <div
                     style="
                       display: flex;
-                      gap: 10px;
+                      gap: 12px;
                       justify-content: center;
                       flex-wrap: wrap;
                     "
                   >
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="Scrolling announcement bar"
                     >
                       &lt;div&gt; .marquee-bar
                     </div>
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="Main navigation"
                     >
                       &lt;nav&gt; .top-nav
                     </div>
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="Hero/Banner section"
                     >
                       &lt;section&gt; .hero / .page-banner
                     </div>
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="Main content sections"
                     >
                       &lt;section&gt; .section (content)
                     </div>
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="Site footer"
                     >
                       &lt;footer&gt; .site-footer
                     </div>
                     <div
-                      class="dom-node-box"
-                      style="
-                        background: #b08d57;
-                        color: #fff;
-                        border-color: #b08d57;
-                      "
+                      class="dom-node-box dom-body-child"
+                      data-tooltip="JavaScript execution"
                     >
                       &lt;script&gt;
                     </div>
@@ -401,33 +217,49 @@
                   <div
                     style="
                       display: flex;
-                      gap: 8px;
+                      gap: 10px;
                       justify-content: center;
                       flex-wrap: wrap;
                     "
                   >
-                    <div class="dom-node-box">&lt;a&gt; .logo</div>
-                    <div class="dom-node-box">&lt;ul&gt; .nav-links</div>
-                    <div class="dom-node-box">&lt;button&gt; .hamburger</div>
+                    <div class="dom-node-box" data-tooltip="Brand logo link">
+                      &lt;a&gt; .logo
+                    </div>
+                    <div class="dom-node-box" data-tooltip="Navigation menu">
+                      &lt;ul&gt; .nav-links
+                    </div>
+                    <div class="dom-node-box" data-tooltip="Mobile menu toggle">
+                      &lt;button&gt; .hamburger
+                    </div>
                   </div>
 
                   <!-- Nav-links children -->
                   <div
                     style="
                       display: flex;
-                      gap: 6px;
+                      gap: 8px;
                       justify-content: center;
                       flex-wrap: wrap;
                     "
                   >
-                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Home</div>
-                    <div class="dom-node-box">
+                    <div class="dom-node-box" data-tooltip="Homepage link">
+                      &lt;li&gt;&lt;a&gt; Home
+                    </div>
+                    <div class="dom-node-box" data-tooltip="Products page">
                       &lt;li&gt;&lt;a&gt; Collections
                     </div>
-                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; About</div>
-                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Events</div>
-                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Contact</div>
-                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; DOM</div>
+                    <div class="dom-node-box" data-tooltip="About us page">
+                      &lt;li&gt;&lt;a&gt; About
+                    </div>
+                    <div class="dom-node-box" data-tooltip="Events page">
+                      &lt;li&gt;&lt;a&gt; Events
+                    </div>
+                    <div class="dom-node-box" data-tooltip="Contact form">
+                      &lt;li&gt;&lt;a&gt; Contact
+                    </div>
+                    <div class="dom-node-box" data-tooltip="This page!">
+                      &lt;li&gt;&lt;a&gt; DOM
+                    </div>
                   </div>
                 </div>
               </div>
@@ -582,8 +414,7 @@
             ><span class="tag">&gt;</span>
           </div>
           <div class="indent-4">
-            <span class="tag">&lt;h1&gt;</span
-            ><span class="text">BASELINE</span
+            <span class="tag">&lt;h1&gt;</span><span class="text">BASELINE</span
             ><span class="tag">&lt;/h1&gt;</span>
           </div>
           <div class="indent-4">
@@ -790,7 +621,7 @@
             <h4>Baseline</h4>
             <p>
               A luxury fashion house dedicated to redefining elegance through
-              sustainable craftsmanship and bold contemporary design since 2011.
+              sustainable craftsmanship and bold contemporary design since 2026.
             </p>
           </div>
           <div class="footer-col">
@@ -815,9 +646,9 @@
           <div class="footer-col">
             <h4>Contact</h4>
             <ul>
-              <li>42 Rue de la Mode</li>
-              <li>Paris, France 75008</li>
-              <li>+33 1 23 45 67 89</li>
+              <li>15 Admiralty Way, Lekki</li>
+              <li>Lagos, Nigeria</li>
+              <li>+234 1 234 5678</li>
               <li>hello@baseline.com</li>
             </ul>
           </div>

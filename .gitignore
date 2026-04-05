@@ -1,0 +1,26 @@
+# Documentation files
+*.docx
+
+# Python
+*.pyc
+__pycache__/
+*.py
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules
+node_modules/
