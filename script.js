@@ -1,5 +1,5 @@
 /* ============================================
-   MAISON ÉLARA — JavaScript Features
+   BASELINE — JavaScript Features
    ============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const darkToggle = document.getElementById("dark-mode-toggle");
   if (darkToggle) {
     // Check saved preference
-    if (localStorage.getItem("elara-dark") === "true") {
+    if (localStorage.getItem("baseline-dark") === "true") {
       document.body.classList.add("dark-mode");
       darkToggle.textContent = "☀️";
     }
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
     darkToggle.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
       const isDark = document.body.classList.contains("dark-mode");
-      localStorage.setItem("elara-dark", isDark);
+      localStorage.setItem("baseline-dark", isDark);
       darkToggle.textContent = isDark ? "☀️" : "🌙";
     });
   }
