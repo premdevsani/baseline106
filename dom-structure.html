@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Structure — MAISON ÉLARA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Additional styles specific to DOM Structure page */
+      .dom-visual-container {
+        overflow-x: auto;
+        padding: 40px 20px;
+      }
+
+      .dom-tree-visual {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 800px;
+      }
+
+      .dom-level {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .dom-node-box {
+        padding: 10px 22px;
+        border: 2px solid var(--color-secondary);
+        font-weight: 600;
+        font-size: 0.85rem;
+        background: var(--color-white);
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        font-family: "Courier New", monospace;
+      }
+
+      .dom-node-box:hover {
+        background: var(--color-secondary);
+        color: var(--color-white);
+        transform: scale(1.05);
+      }
+
+      .dom-node-box.root {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-color: var(--color-primary);
+        font-size: 1rem;
+        padding: 14px 30px;
+      }
+
+      .dom-node-box.root:hover {
+        background: var(--color-secondary);
+      }
+
+      .dom-line {
+        width: 2px;
+        height: 25px;
+        background: var(--color-border);
+        margin: 0 auto;
+      }
+
+      .dom-horizontal {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
+        position: relative;
+      }
+
+      .dom-horizontal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: var(--color-border);
+      }
+
+      .dom-branch-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dom-branch-item .dom-line-top {
+        width: 2px;
+        height: 15px;
+        background: var(--color-border);
+      }
+
+      .dom-sub-children {
+        display: flex;
+        gap: 8px;
+        margin-top: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .dom-sub-children .dom-node-box {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        border-width: 1px;
+        background: var(--color-light);
+      }
+
+      .dom-sub-children .dom-node-box:hover {
+        background: var(--color-secondary);
+        color: var(--color-white);
+      }
+
+      /* Code representation */
+      .dom-code-block {
+        background: #1e1e2e;
+        color: #cdd6f4;
+        padding: 30px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        font-size: 0.85rem;
+        line-height: 1.9;
+        margin-top: 30px;
+      }
+
+      .dom-code-block .indent-1 {
+        margin-left: 25px;
+      }
+      .dom-code-block .indent-2 {
+        margin-left: 50px;
+      }
+      .dom-code-block .indent-3 {
+        margin-left: 75px;
+      }
+      .dom-code-block .indent-4 {
+        margin-left: 100px;
+      }
+
+      .dom-code-block .tag {
+        color: #f38ba8;
+      }
+      .dom-code-block .attr {
+        color: #fab387;
+      }
+      .dom-code-block .string {
+        color: #a6e3a1;
+      }
+      .dom-code-block .comment {
+        color: #6c7086;
+        font-style: italic;
+      }
+      .dom-code-block .text {
+        color: #cdd6f4;
+      }
+
+      .explanation-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      .explanation-card {
+        padding: 25px;
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-left: 4px solid var(--color-secondary);
+      }
+
+      .explanation-card h4 {
+        margin-bottom: 10px;
+        font-family: "Courier New", monospace;
+        color: var(--color-secondary);
+      }
+
+      .explanation-card p {
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======== MARQUEE BAR ======== -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+      </div>
+    </div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="top-nav">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">Maison <em>Élara</em></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dom-structure.html">DOM</a></li>
+          <li>
+            <button
+              id="dark-mode-toggle"
+              title="Toggle dark mode"
+              style="
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 1rem;
+              "
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======== PAGE BANNER ======== -->
+    <section class="page-banner banner-dom">
+      <div class="banner-text">
+        <h1>DOM Structure</h1>
+        <p>Understanding the Document Object Model of our website</p>
+      </div>
+    </section>
+
+    <!-- ======== WHAT IS THE DOM ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What is the DOM?</h2>
+          <p>
+            The Document Object Model is a tree-like representation of every
+            element on a web page
+          </p>
+        </div>
+
+        <div class="story-block reveal">
+          <div
+            class="story-text"
+            style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto"
+          >
+            <p>
+              The <strong>DOM (Document Object Model)</strong> is a programming
+              interface for web documents. It represents the page so that
+              programs can change the document structure, style, and content.
+              The DOM represents the document as a tree of nodes — every HTML
+              tag becomes a node in this tree.
+            </p>
+            <p>
+              Below is the visual DOM structure of the
+              <strong>Maison Élara</strong> website, showing how elements are
+              nested inside one another, from the root
+              <code>&lt;html&gt;</code> element down to individual components
+              like navigation links, images, and text content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== VISUAL DOM TREE ======== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Visual DOM Tree</h2>
+          <p>
+            Interactive visual representation of the website structure (hover
+            over nodes)
+          </p>
+        </div>
+
+        <div class="dom-visual-container reveal">
+          <div class="dom-tree-visual">
+            <!-- Level 0: Document -->
+            <div class="dom-level">
+              <div class="dom-node-box root">Document</div>
+            </div>
+            <div class="dom-line"></div>
+
+            <!-- Level 1: html -->
+            <div class="dom-level">
+              <div class="dom-node-box root">&lt;html&gt;</div>
+            </div>
+            <div class="dom-line"></div>
+
+            <!-- Level 2: head + body -->
+            <div class="dom-horizontal">
+              <div class="dom-branch-item">
+                <div class="dom-line-top"></div>
+                <div class="dom-node-box">&lt;head&gt;</div>
+                <div class="dom-line"></div>
+                <div class="dom-sub-children">
+                  <div class="dom-node-box">&lt;meta&gt;</div>
+                  <div class="dom-node-box">&lt;title&gt;</div>
+                  <div class="dom-node-box">&lt;link&gt; CSS</div>
+                  <div class="dom-node-box">&lt;link&gt; Fonts</div>
+                </div>
+              </div>
+
+              <div class="dom-branch-item">
+                <div class="dom-line-top"></div>
+                <div class="dom-node-box">&lt;body&gt;</div>
+                <div class="dom-line"></div>
+                <div
+                  class="dom-sub-children"
+                  style="flex-direction: column; gap: 12px"
+                >
+                  <!-- Body children row -->
+                  <div
+                    style="
+                      display: flex;
+                      gap: 10px;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                    "
+                  >
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;div&gt; .marquee-bar
+                    </div>
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;nav&gt; .top-nav
+                    </div>
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;section&gt; .hero / .page-banner
+                    </div>
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;section&gt; .section (content)
+                    </div>
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;footer&gt; .site-footer
+                    </div>
+                    <div
+                      class="dom-node-box"
+                      style="
+                        background: #b08d57;
+                        color: #fff;
+                        border-color: #b08d57;
+                      "
+                    >
+                      &lt;script&gt;
+                    </div>
+                  </div>
+
+                  <!-- Nav children -->
+                  <div
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                    "
+                  >
+                    <div class="dom-node-box">&lt;a&gt; .logo</div>
+                    <div class="dom-node-box">&lt;ul&gt; .nav-links</div>
+                    <div class="dom-node-box">&lt;button&gt; .hamburger</div>
+                  </div>
+
+                  <!-- Nav-links children -->
+                  <div
+                    style="
+                      display: flex;
+                      gap: 6px;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                    "
+                  >
+                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Home</div>
+                    <div class="dom-node-box">
+                      &lt;li&gt;&lt;a&gt; Collections
+                    </div>
+                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; About</div>
+                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Events</div>
+                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; Contact</div>
+                    <div class="dom-node-box">&lt;li&gt;&lt;a&gt; DOM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CODE-LEVEL DOM ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>DOM as Code</h2>
+          <p>
+            The hierarchical HTML structure that the browser parses into the DOM
+            tree
+          </p>
+        </div>
+
+        <div class="dom-code-block reveal">
+          <div>
+            <span class="comment">&lt;!-- Document Node (Root) --&gt;</span>
+          </div>
+          <div>
+            <span class="tag">&lt;html</span>
+            <span class="attr">lang</span>=<span class="string">"en"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-1"><span class="tag">&lt;head&gt;</span></div>
+          <div class="indent-2">
+            <span class="tag">&lt;meta</span>
+            <span class="attr">charset</span>=<span class="string">"UTF-8"</span
+            ><span class="tag"> /&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;title&gt;</span
+            ><span class="text">MAISON ÉLARA</span
+            ><span class="tag">&lt;/title&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;link</span>
+            <span class="attr">rel</span>=<span class="string"
+              >"stylesheet"</span
+            >
+            <span class="attr">href</span>=<span class="string"
+              >"styles.css"</span
+            ><span class="tag"> /&gt;</span>
+          </div>
+          <div class="indent-1"><span class="tag">&lt;/head&gt;</span></div>
+          <br />
+          <div class="indent-1"><span class="tag">&lt;body&gt;</span></div>
+          <br />
+          <div class="indent-2">
+            <span class="comment">&lt;!-- Marquee Bar --&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"marquee-bar"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-3">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"marquee-content"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;span&gt;</span
+            ><span class="text">✦ Event announcements...</span
+            ><span class="tag">&lt;/span&gt;</span>
+          </div>
+          <div class="indent-3"><span class="tag">&lt;/div&gt;</span></div>
+          <div class="indent-2"><span class="tag">&lt;/div&gt;</span></div>
+          <br />
+          <div class="indent-2">
+            <span class="comment">&lt;!-- Navigation --&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;nav</span>
+            <span class="attr">class</span>=<span class="string">"top-nav"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-3">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"container nav-wrapper"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;a</span> <span class="attr">class</span>=<span
+              class="string"
+              >"logo"</span
+            ><span class="tag">&gt;</span><span class="text">Maison Élara</span
+            ><span class="tag">&lt;/a&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;ul</span>
+            <span class="attr">class</span>=<span class="string"
+              >"nav-links"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a&gt;</span
+            ><span class="text">Home</span
+            ><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a&gt;</span
+            ><span class="text">Collections</span
+            ><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a&gt;</span
+            ><span class="text">About</span
+            ><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a&gt;</span
+            ><span class="text">Events</span
+            ><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a&gt;</span
+            ><span class="text">Contact</span
+            ><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          </div>
+          <div class="indent-4"><span class="tag">&lt;/ul&gt;</span></div>
+          <div class="indent-4">
+            <span class="tag">&lt;button</span>
+            <span class="attr">class</span>=<span class="string"
+              >"hamburger"</span
+            ><span class="tag">&gt;</span><span class="text">...</span
+            ><span class="tag">&lt;/button&gt;</span>
+          </div>
+          <div class="indent-3"><span class="tag">&lt;/div&gt;</span></div>
+          <div class="indent-2"><span class="tag">&lt;/nav&gt;</span></div>
+          <br />
+          <div class="indent-2">
+            <span class="comment">&lt;!-- Hero / Page Banner --&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;section</span>
+            <span class="attr">class</span>=<span class="string">"hero"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-3">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"hero-content"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;h1&gt;</span
+            ><span class="text">MAISON ÉLARA</span
+            ><span class="tag">&lt;/h1&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"typewriter-text"</span
+            ><span class="tag">&gt;&lt;/div&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;p&gt;</span
+            ><span class="text">Tagline text...</span
+            ><span class="tag">&lt;/p&gt;</span>
+          </div>
+          <div class="indent-4">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"hero-buttons"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;a</span>
+            <span class="attr">class</span>=<span class="string"
+              >"btn btn-primary"</span
+            ><span class="tag">&gt;</span><span class="text">Explore</span
+            ><span class="tag">&lt;/a&gt;</span>
+          </div>
+          <div class="indent-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;a</span>
+            <span class="attr">class</span>=<span class="string"
+              >"btn btn-outline"</span
+            ><span class="tag">&gt;</span><span class="text">Book</span
+            ><span class="tag">&lt;/a&gt;</span>
+          </div>
+          <div class="indent-4"><span class="tag">&lt;/div&gt;</span></div>
+          <div class="indent-3"><span class="tag">&lt;/div&gt;</span></div>
+          <div class="indent-2"><span class="tag">&lt;/section&gt;</span></div>
+          <br />
+          <div class="indent-2">
+            <span class="comment">&lt;!-- Content Sections --&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;section</span>
+            <span class="attr">class</span>=<span class="string">"section"</span
+            ><span class="tag">&gt;</span><span class="text"> ... </span
+            ><span class="tag">&lt;/section&gt;</span>
+          </div>
+          <br />
+          <div class="indent-2">
+            <span class="comment">&lt;!-- Footer --&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;footer</span>
+            <span class="attr">class</span>=<span class="string"
+              >"site-footer"</span
+            ><span class="tag">&gt;</span>
+          </div>
+          <div class="indent-3">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"footer-grid"</span
+            ><span class="tag">&gt;</span><span class="text"> ... </span
+            ><span class="tag">&lt;/div&gt;</span>
+          </div>
+          <div class="indent-3">
+            <span class="tag">&lt;div</span>
+            <span class="attr">class</span>=<span class="string"
+              >"footer-bottom"</span
+            ><span class="tag">&gt;</span><span class="text"> ... </span
+            ><span class="tag">&lt;/div&gt;</span>
+          </div>
+          <div class="indent-2"><span class="tag">&lt;/footer&gt;</span></div>
+          <br />
+          <div class="indent-2">
+            <span class="tag">&lt;button</span>
+            <span class="attr">class</span>=<span class="string"
+              >"back-to-top"</span
+            ><span class="tag">&gt;</span><span class="text">↑</span
+            ><span class="tag">&lt;/button&gt;</span>
+          </div>
+          <div class="indent-2">
+            <span class="tag">&lt;script</span>
+            <span class="attr">src</span>=<span class="string">"script.js"</span
+            ><span class="tag">&gt;&lt;/script&gt;</span>
+          </div>
+          <br />
+          <div class="indent-1"><span class="tag">&lt;/body&gt;</span></div>
+          <div><span class="tag">&lt;/html&gt;</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== DOM EXPLANATION ======== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Key DOM Concepts</h2>
+          <p>Understanding the building blocks of web page structure</p>
+        </div>
+
+        <div class="explanation-grid reveal">
+          <div class="explanation-card">
+            <h4>&lt;html&gt; — Root Element</h4>
+            <p>
+              The root node of the DOM tree. Every other element descends from
+              it. Contains <code>&lt;head&gt;</code> and
+              <code>&lt;body&gt;</code>.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>&lt;head&gt; — Metadata</h4>
+            <p>
+              Contains metadata: character set, title, external stylesheets
+              (CSS), fonts, and other non-visual resources.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>&lt;body&gt; — Visible Content</h4>
+            <p>
+              Everything the user sees on the page lives here. Navigation,
+              sections, images, text, forms, and the footer.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>&lt;nav&gt; — Navigation</h4>
+            <p>
+              The consistent navigation bar present on all pages. Contains the
+              logo, links (<code>&lt;ul&gt; → &lt;li&gt; → &lt;a&gt;</code>),
+              and the mobile hamburger button.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>&lt;section&gt; — Content Blocks</h4>
+            <p>
+              Thematic groupings of content. Each page uses multiple sections:
+              hero banners, product grids, event timelines, contact forms, etc.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>&lt;footer&gt; — Page Footer</h4>
+            <p>
+              The bottom of every page, containing brand info, quick links,
+              contact details, and social media links.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>Parent–Child Relationship</h4>
+            <p>
+              DOM nodes are related hierarchically. A <code>&lt;ul&gt;</code> is
+              the parent of <code>&lt;li&gt;</code> elements, which are siblings
+              to each other.
+            </p>
+          </div>
+
+          <div class="explanation-card">
+            <h4>JavaScript &amp; the DOM</h4>
+            <p>
+              JavaScript interacts with the DOM to create dynamic behavior —
+              toggling menus, filtering products, validating forms, and running
+              countdown timers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== LIVE DOM INSPECTOR (JS Feature) ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Live DOM Inspector</h2>
+          <p>Click the button to see the live DOM node count of this page</p>
+        </div>
+        <div style="text-align: center" class="reveal">
+          <button class="btn btn-dark" onclick="inspectDOM()">
+            Inspect Current DOM
+          </button>
+          <div
+            id="dom-inspector-result"
+            style="
+              margin-top: 25px;
+              padding: 25px;
+              background: var(--color-light);
+              border: 1px solid var(--color-border);
+              display: none;
+            "
+          >
+            <!-- Results injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Maison Élara</h4>
+            <p>
+              A luxury fashion house dedicated to redefining elegance through
+              sustainable craftsmanship and bold contemporary design since 2011.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="products.html">Haute Couture</a></li>
+              <li><a href="products.html">Prêt-à-Porter</a></li>
+              <li><a href="products.html">Accessories</a></li>
+              <li><a href="products.html">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>42 Rue de la Mode</li>
+              <li>Paris, France 75008</li>
+              <li>+33 1 23 45 67 89</li>
+              <li>hello@maisonelara.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Maison Élara. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="Pinterest">PN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" title="Back to top">&#8679;</button>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+
+    <!-- DOM Inspector Feature (Page-Specific JS) -->
+    <script>
+      function inspectDOM() {
+        const result = document.getElementById("dom-inspector-result");
+        const allNodes = document.querySelectorAll("*");
+        const tagCount = {};
+
+        allNodes.forEach((node) => {
+          const tag = node.tagName.toLowerCase();
+          tagCount[tag] = (tagCount[tag] || 0) + 1;
+        });
+
+        const sorted = Object.entries(tagCount).sort((a, b) => b[1] - a[1]);
+        const totalNodes = allNodes.length;
+        const totalTextNodes = document.createTreeWalker(
+          document.body,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false,
+        );
+        let textCount = 0;
+        while (totalTextNodes.nextNode()) textCount++;
+
+        let html = '<h3 style="margin-bottom:15px;">DOM Analysis Results</h3>';
+        html +=
+          "<p><strong>Total Element Nodes:</strong> " + totalNodes + "</p>";
+        html += "<p><strong>Total Text Nodes:</strong> " + textCount + "</p>";
+        html +=
+          "<p><strong>DOM Tree Depth:</strong> " +
+          getMaxDepth(document.documentElement) +
+          " levels</p>";
+        html +=
+          '<br/><h4 style="margin-bottom:10px;">Element Breakdown (Top 15):</h4>';
+        html +=
+          '<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px;">';
+
+        sorted.slice(0, 15).forEach(([tag, count]) => {
+          html +=
+            '<div style="padding:8px 12px; background:#fff; border:1px solid #e0d5c5; text-align:center;">';
+          html +=
+            '<strong style="color:#b08d57;">&lt;' +
+            tag +
+            "&gt;</strong><br/>" +
+            count;
+          html += "</div>";
+        });
+
+        html += "</div>";
+        result.innerHTML = html;
+        result.style.display = "block";
+        result.style.animation = "fadeInUp 0.5s ease forwards";
+      }
+
+      function getMaxDepth(element) {
+        if (!element.children.length) return 1;
+        let maxChildDepth = 0;
+        for (const child of element.children) {
+          const d = getMaxDepth(child);
+          if (d > maxChildDepth) maxChildDepth = d;
+        }
+        return 1 + maxChildDepth;
+      }
+    </script>
+  </body>
+</html>

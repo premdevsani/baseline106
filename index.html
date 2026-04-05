@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAISON ÉLARA — Luxury Fashion House</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ======== MARQUEE BAR ======== -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Live Clock: <span id="live-clock"></span></span>
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Live Clock: <span id="live-clock-2"></span></span>
+      </div>
+    </div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="top-nav">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">Maison <em>Élara</em></a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="products.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dom-structure.html">DOM</a></li>
+          <li>
+            <button
+              id="dark-mode-toggle"
+              title="Toggle dark mode"
+              style="
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 1rem;
+              "
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======== HERO SECTION ======== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>MAISON ÉLARA</h1>
+        <div class="typewriter-text"></div>
+        <p>
+          Where timeless elegance meets contemporary design. Discover
+          collections curated for those who dare to define their own style.
+        </p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary"
+            >Explore Collections</a
+          >
+          <a href="contact.html" class="btn btn-outline">Book Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FEATURED COLLECTIONS ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Featured Collections</h2>
+          <p>Handpicked highlights from our latest seasonal offerings</p>
+        </div>
+        <div class="featured-grid">
+          <div class="featured-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600"
+              alt="Haute Couture"
+            />
+            <div class="overlay">
+              <h3>Haute Couture</h3>
+              <p>Exquisite craftsmanship for the extraordinary</p>
+            </div>
+          </div>
+          <div class="featured-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600"
+              alt="Prêt-à-Porter"
+            />
+            <div class="overlay">
+              <h3>Prêt-à-Porter</h3>
+              <p>Ready-to-wear luxury for every day</p>
+            </div>
+          </div>
+          <div class="featured-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600"
+              alt="Accessories"
+            />
+            <div class="overlay">
+              <h3>Accessories</h3>
+              <p>The finishing touch of sophistication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STATS SECTION ======== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="stats-strip reveal">
+          <div class="stat-item">
+            <h3>
+              <span class="counter" data-target="15" data-suffix="+">0</span>
+            </h3>
+            <p>Years of Excellence</p>
+          </div>
+          <div class="stat-item">
+            <h3>
+              <span class="counter" data-target="200" data-suffix="+">0</span>
+            </h3>
+            <p>Unique Designs</p>
+          </div>
+          <div class="stat-item">
+            <h3>
+              <span class="counter" data-target="50" data-suffix="+">0</span>
+            </h3>
+            <p>Global Stores</p>
+          </div>
+          <div class="stat-item">
+            <h3>
+              <span class="counter" data-target="10000" data-suffix="+">0</span>
+            </h3>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== PHILOSOPHY SECTION ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="story-block reveal">
+          <div class="story-image">
+            <img
+              src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800"
+              alt="Our Craft"
+            />
+          </div>
+          <div class="story-text">
+            <h2>Our Philosophy</h2>
+            <p>
+              At Maison Élara, we believe fashion is more than fabric — it is an
+              expression of identity. Every stitch, every silhouette, every
+              shade is chosen with intention.
+            </p>
+            <p>
+              Founded on the principles of sustainability and artisanal mastery,
+              our collections bridge the gap between heritage and modernity,
+              creating pieces that transcend seasons.
+            </p>
+            <a href="about.html" class="btn btn-dark">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== NEWSLETTER ======== -->
+    <section class="section section-dark">
+      <div class="container" style="text-align: center">
+        <div class="reveal">
+          <h2 style="color: #fff; margin-bottom: 12px">Stay in Style</h2>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              max-width: 500px;
+              margin: 0 auto 25px;
+            "
+          >
+            Join our newsletter for exclusive previews, private events, and
+            early access to new collections.
+          </p>
+          <form
+            onsubmit="
+              event.preventDefault();
+              showToast('Welcome to Maison Élara!', 'success');
+            "
+            style="display: flex; gap: 12px; max-width: 450px; margin: 0 auto"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+              style="
+                flex: 1;
+                padding: 14px 18px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                font-family: inherit;
+                font-size: 0.9rem;
+                outline: none;
+              "
+            />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Maison Élara</h4>
+            <p>
+              A luxury fashion house dedicated to redefining elegance through
+              sustainable craftsmanship and bold contemporary design since 2011.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="products.html">Haute Couture</a></li>
+              <li><a href="products.html">Prêt-à-Porter</a></li>
+              <li><a href="products.html">Accessories</a></li>
+              <li><a href="products.html">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>42 Rue de la Mode</li>
+              <li>Paris, France 75008</li>
+              <li>+33 1 23 45 67 89</li>
+              <li>hello@maisonelara.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Maison Élara. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="Pinterest">PN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" title="Back to top">&#8679;</button>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

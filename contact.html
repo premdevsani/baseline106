@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — MAISON ÉLARA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ======== MARQUEE BAR ======== -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+      </div>
+    </div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="top-nav">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">Maison <em>Élara</em></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dom-structure.html">DOM</a></li>
+          <li>
+            <button
+              id="dark-mode-toggle"
+              title="Toggle dark mode"
+              style="
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 1rem;
+              "
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======== PAGE BANNER ======== -->
+    <section class="page-banner banner-contact">
+      <div class="banner-text">
+        <h1>Get in Touch</h1>
+        <p>Inquiries, appointments, and private consultations</p>
+      </div>
+    </section>
+
+    <!-- ======== CONTACT SECTION ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Inquiries &amp; Appointments</h2>
+          <p>
+            Whether it's a styling consultation or a general question, we'd love
+            to hear from you
+          </p>
+        </div>
+
+        <div class="contact-layout reveal">
+          <!-- Info Panel -->
+          <div class="contact-info-panel">
+            <h3>Contact Information</h3>
+
+            <div class="contact-detail">
+              <div class="icon">📍</div>
+              <div>
+                <h4>Visit Us</h4>
+                <p>42 Rue de la Mode<br />Paris, France 75008</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="icon">📞</div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+33 1 23 45 67 89</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="icon">✉️</div>
+              <div>
+                <h4>Email Us</h4>
+                <p>hello@maisonelara.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="icon">🕐</div>
+              <div>
+                <h4>Working Hours</h4>
+                <p>
+                  Mon – Fri: 9:00 AM – 7:00 PM<br />Sat: 10:00 AM – 5:00 PM<br />Sun:
+                  Closed
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Panel -->
+          <div class="contact-form-panel">
+            <h3>Send Us a Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="inp-name">Full Name *</label>
+                  <input
+                    type="text"
+                    id="inp-name"
+                    placeholder="Your full name"
+                  />
+                  <p class="error-msg">Please enter your full name</p>
+                </div>
+                <div class="form-group">
+                  <label for="inp-email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="inp-email"
+                    placeholder="you@example.com"
+                  />
+                  <p class="error-msg">Please enter a valid email</p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="inp-phone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="inp-phone"
+                    placeholder="+1 234 567 890"
+                  />
+                  <p class="error-msg">Please enter a valid phone number</p>
+                </div>
+                <div class="form-group">
+                  <label for="inp-subject">Subject *</label>
+                  <select id="inp-subject">
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="appointment">Book an Appointment</option>
+                    <option value="styling">Private Styling Session</option>
+                    <option value="press">Press &amp; Media</option>
+                    <option value="wholesale">Wholesale / Partnership</option>
+                    <option value="event">Event Invitation</option>
+                  </select>
+                  <p class="error-msg">Please select a subject</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inp-date"
+                  >Preferred Appointment Date (Optional)</label
+                >
+                <input type="date" id="inp-date" />
+                <p class="error-msg">Please select a future date</p>
+              </div>
+
+              <div class="form-group">
+                <label for="inp-message">Message *</label>
+                <textarea
+                  id="inp-message"
+                  rows="5"
+                  placeholder="Tell us about your inquiry..."
+                ></textarea>
+                <p class="error-msg">Message must be at least 10 characters</p>
+              </div>
+
+              <button type="submit" class="btn btn-dark">Submit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== MAP SECTION ======== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Find Us</h2>
+          <p>Visit our flagship atelier in the heart of Paris</p>
+        </div>
+        <div
+          class="reveal"
+          style="
+            width: 100%;
+            height: 400px;
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+          "
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047744348!2d2.3354330!3d48.8698044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sAvenue%20des%20Champs-%C3%89lys%C3%A9es%2C%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            title="Maison Élara Location"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Maison Élara</h4>
+            <p>
+              A luxury fashion house dedicated to redefining elegance through
+              sustainable craftsmanship and bold contemporary design since 2011.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="products.html">Haute Couture</a></li>
+              <li><a href="products.html">Prêt-à-Porter</a></li>
+              <li><a href="products.html">Accessories</a></li>
+              <li><a href="products.html">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>42 Rue de la Mode</li>
+              <li>Paris, France 75008</li>
+              <li>+33 1 23 45 67 89</li>
+              <li>hello@maisonelara.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Maison Élara. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="Pinterest">PN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" title="Back to top">&#8679;</button>
+    <script src="script.js"></script>
+  </body>
+</html>

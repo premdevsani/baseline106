@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collections — MAISON ÉLARA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ======== MARQUEE BAR ======== -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+      </div>
+    </div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="top-nav">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">Maison <em>Élara</em></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dom-structure.html">DOM</a></li>
+          <li>
+            <button
+              id="dark-mode-toggle"
+              title="Toggle dark mode"
+              style="
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 1rem;
+              "
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======== PAGE BANNER ======== -->
+    <section class="page-banner banner-products">
+      <div class="banner-text">
+        <h1>Our Collections</h1>
+        <p>Discover the artistry behind every piece</p>
+      </div>
+    </section>
+
+    <!-- ======== PRODUCTS SHOWCASE ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Product Showcase</h2>
+          <p>Browse our curated selection of luxury fashion and accessories</p>
+        </div>
+
+        <!-- Filter Buttons (JS Feature: product filtering) -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="couture">Couture</button>
+          <button class="filter-btn" data-filter="ready-to-wear">
+            Ready-to-Wear
+          </button>
+          <button class="filter-btn" data-filter="accessories">
+            Accessories
+          </button>
+          <button class="filter-btn" data-filter="footwear">Footwear</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card reveal" data-category="couture">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?w=500"
+                alt="Velvet Evening Gown"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Couture</p>
+              <h4>Velvet Evening Gown</h4>
+              <p class="price">$4,200</p>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card reveal" data-category="couture">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500"
+                alt="Silk Embroidered Dress"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Couture</p>
+              <h4>Silk Embroidered Dress</h4>
+              <p class="price">$5,800</p>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card reveal" data-category="ready-to-wear">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500"
+                alt="Tailored Blazer Set"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Ready-to-Wear</p>
+              <h4>Tailored Blazer Set</h4>
+              <p class="price">$1,450</p>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card reveal" data-category="ready-to-wear">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500"
+                alt="Cashmere Overcoat"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Ready-to-Wear</p>
+              <h4>Cashmere Overcoat</h4>
+              <p class="price">$2,100</p>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card reveal" data-category="accessories">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"
+                alt="Élara Signature Handbag"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Accessories</p>
+              <h4>Élara Signature Handbag</h4>
+              <p class="price">$3,600</p>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card reveal" data-category="accessories">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500"
+                alt="Gold Chain Necklace"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Accessories</p>
+              <h4>Gold Chain Necklace</h4>
+              <p class="price">$890</p>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card reveal" data-category="footwear">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"
+                alt="Stiletto Heels"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Footwear</p>
+              <h4>Élara Stiletto Heels</h4>
+              <p class="price">$1,200</p>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card reveal" data-category="footwear">
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500"
+                alt="Leather Chelsea Boots"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <p class="category-tag">Footwear</p>
+              <h4>Leather Chelsea Boots</h4>
+              <p class="price">$980</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== QUICK VIEW MODAL (JS Feature) ======== -->
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <img
+          id="modal-img"
+          src=""
+          alt="Product Preview"
+          style="
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+          "
+        />
+        <h3 id="modal-name"></h3>
+        <p
+          id="modal-price"
+          style="
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #b08d57;
+            margin-top: 8px;
+          "
+        ></p>
+        <p style="margin-top: 10px; color: #777">
+          Handcrafted with premium materials for an impeccable finish. Contact
+          us for sizing and availability.
+        </p>
+        <a href="contact.html" class="btn btn-dark" style="margin-top: 15px"
+          >Inquire Now</a
+        >
+      </div>
+    </div>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Maison Élara</h4>
+            <p>
+              A luxury fashion house dedicated to redefining elegance through
+              sustainable craftsmanship and bold contemporary design since 2011.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="products.html">Haute Couture</a></li>
+              <li><a href="products.html">Prêt-à-Porter</a></li>
+              <li><a href="products.html">Accessories</a></li>
+              <li><a href="products.html">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>42 Rue de la Mode</li>
+              <li>Paris, France 75008</li>
+              <li>+33 1 23 45 67 89</li>
+              <li>hello@maisonelara.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Maison Élara. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="Pinterest">PN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" title="Back to top">&#8679;</button>
+    <script src="script.js"></script>
+  </body>
+</html>

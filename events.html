@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events — MAISON ÉLARA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ======== MARQUEE BAR ======== -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+        <span>✦ Spring/Summer 2026 Collection Now Available</span>
+        <span>✦ Fashion Gala — March 15, 2026 at The Grand Hall</span>
+        <span>✦ Free Shipping on Orders Over $250</span>
+        <span>✦ Book Your Private Styling Session Today</span>
+      </div>
+    </div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="top-nav">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">Maison <em>Élara</em></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dom-structure.html">DOM</a></li>
+          <li>
+            <button
+              id="dark-mode-toggle"
+              title="Toggle dark mode"
+              style="
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 1rem;
+              "
+            >
+              🌙
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======== PAGE BANNER ======== -->
+    <section class="page-banner banner-events">
+      <div class="banner-text">
+        <h1>Upcoming Events</h1>
+        <p>Experience the world of Maison Élara in person</p>
+      </div>
+    </section>
+
+    <!-- ======== EVENTS TIMELINE ======== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What's Coming Up</h2>
+          <p>Mark your calendars for these exclusive fashion experiences</p>
+        </div>
+
+        <div class="events-timeline">
+          <!-- Event 1 -->
+          <div class="event-item reveal">
+            <div class="event-date-badge">
+              <span class="day">15</span>
+              <span>Mar</span>
+            </div>
+            <div class="event-content">
+              <h3>Spring Fashion Gala 2026</h3>
+              <div class="event-meta">
+                <span>📍 The Grand Hall, Paris</span>
+                <span>🕐 7:00 PM CET</span>
+              </div>
+              <p>
+                An evening of glamour featuring the unveiling of our
+                Spring/Summer 2026 collection. Red carpet, live music, and a
+                curated dining experience.
+              </p>
+              <div class="event-countdown" data-date="2026-03-15T19:00:00">
+                <div class="countdown-unit">
+                  <div class="number cd-days">--</div>
+                  <div class="label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-hours">--</div>
+                  <div class="label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-mins">--</div>
+                  <div class="label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-secs">--</div>
+                  <div class="label">Secs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="event-item reveal">
+            <div class="event-date-badge">
+              <span class="day">05</span>
+              <span>Apr</span>
+            </div>
+            <div class="event-content">
+              <h3>Sustainable Fashion Summit</h3>
+              <div class="event-meta">
+                <span>📍 Élara Atelier, Milan</span>
+                <span>🕐 10:00 AM CET</span>
+              </div>
+              <p>
+                A full-day summit exploring the future of sustainable luxury
+                fashion. Panel discussions, workshops, and networking with
+                industry leaders.
+              </p>
+              <div class="event-countdown" data-date="2026-04-05T10:00:00">
+                <div class="countdown-unit">
+                  <div class="number cd-days">--</div>
+                  <div class="label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-hours">--</div>
+                  <div class="label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-mins">--</div>
+                  <div class="label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-secs">--</div>
+                  <div class="label">Secs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="event-item reveal">
+            <div class="event-date-badge">
+              <span class="day">22</span>
+              <span>May</span>
+            </div>
+            <div class="event-content">
+              <h3>Élara Pop-Up Boutique</h3>
+              <div class="event-meta">
+                <span>📍 SoHo, New York</span>
+                <span>🕐 11:00 AM – 8:00 PM EST</span>
+              </div>
+              <p>
+                Experience Maison Élara in New York! A three-day pop-up boutique
+                featuring exclusive limited-edition pieces and personal styling
+                sessions.
+              </p>
+              <div class="event-countdown" data-date="2026-05-22T11:00:00">
+                <div class="countdown-unit">
+                  <div class="number cd-days">--</div>
+                  <div class="label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-hours">--</div>
+                  <div class="label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-mins">--</div>
+                  <div class="label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-secs">--</div>
+                  <div class="label">Secs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="event-item reveal">
+            <div class="event-date-badge">
+              <span class="day">10</span>
+              <span>Jul</span>
+            </div>
+            <div class="event-content">
+              <h3>Autumn/Winter Preview</h3>
+              <div class="event-meta">
+                <span>📍 Maison Élara HQ, Paris</span>
+                <span>🕐 6:00 PM CET</span>
+              </div>
+              <p>
+                An intimate preview of the upcoming Autumn/Winter 2026
+                collection for VIP clients and press. By invitation only.
+              </p>
+              <div class="event-countdown" data-date="2026-07-10T18:00:00">
+                <div class="countdown-unit">
+                  <div class="number cd-days">--</div>
+                  <div class="label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-hours">--</div>
+                  <div class="label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-mins">--</div>
+                  <div class="label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-secs">--</div>
+                  <div class="label">Secs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5 -->
+          <div class="event-item reveal">
+            <div class="event-date-badge">
+              <span class="day">28</span>
+              <span>Sep</span>
+            </div>
+            <div class="event-content">
+              <h3>Élara Charity Fashion Show</h3>
+              <div class="event-meta">
+                <span>📍 The Royal Theatre, London</span>
+                <span>🕐 8:00 PM GMT</span>
+              </div>
+              <p>
+                Fashion meets philanthropy. All proceeds go to our Élara
+                Foundation supporting young designers from underserved
+                communities.
+              </p>
+              <div class="event-countdown" data-date="2026-09-28T20:00:00">
+                <div class="countdown-unit">
+                  <div class="number cd-days">--</div>
+                  <div class="label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-hours">--</div>
+                  <div class="label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-mins">--</div>
+                  <div class="label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                  <div class="number cd-secs">--</div>
+                  <div class="label">Secs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CTA SECTION ======== -->
+    <section class="section section-dark">
+      <div class="container" style="text-align: center">
+        <div class="reveal">
+          <h2 style="color: #fff; margin-bottom: 12px">Want an Invitation?</h2>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              max-width: 500px;
+              margin: 0 auto 25px;
+            "
+          >
+            Join our VIP list to receive invitations to exclusive Maison Élara
+            events.
+          </p>
+          <a href="contact.html" class="btn btn-primary"
+            >Request an Invitation</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Maison Élara</h4>
+            <p>
+              A luxury fashion house dedicated to redefining elegance through
+              sustainable craftsmanship and bold contemporary design since 2011.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="products.html">Haute Couture</a></li>
+              <li><a href="products.html">Prêt-à-Porter</a></li>
+              <li><a href="products.html">Accessories</a></li>
+              <li><a href="products.html">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>42 Rue de la Mode</li>
+              <li>Paris, France 75008</li>
+              <li>+33 1 23 45 67 89</li>
+              <li>hello@maisonelara.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Maison Élara. All Rights
+            Reserved.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="Pinterest">PN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" title="Back to top">&#8679;</button>
+    <script src="script.js"></script>
+  </body>
+</html>
